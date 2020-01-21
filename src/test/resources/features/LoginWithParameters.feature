@@ -1,6 +1,5 @@
 Feature: Login with parameters
 
-
   Scenario: Login as a driver
     Given the user is on the login page
     When user logs in using "User1" and "UserUser123"
