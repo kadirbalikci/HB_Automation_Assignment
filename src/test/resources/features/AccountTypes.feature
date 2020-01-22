@@ -16,7 +16,6 @@ Feature: Account types
     Then the title should contains "All - Campaigns - Marketing"
 
 
-  @wip
   Scenario Outline: Login with different users
     Given the user logged in as a "<usertypes>"
     When the user navigates "<tab>" "<module>"
@@ -26,7 +25,6 @@ Feature: Account types
       | driver        | Activities | Calendar Events | Calendar Events - Activities |
       | sales manager | Customers  | Accounts        | Accounts - Customers         |
       | store manager | Marketing  | Campaigns       | All - Campaigns - Marketing  |
-
 
 
 
