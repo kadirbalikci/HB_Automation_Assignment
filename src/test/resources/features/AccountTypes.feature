@@ -15,28 +15,19 @@ Feature: Account types
     When the user navigates "Marketing" "Campaigns"
     Then the title should contains "All - Campaigns - Marketing"
 
- # we are trying to run all these scenarios in ddt
-#  Scenario: Login with different users
-#    Given the user logged in as a "driver"
-#
-#  Scenario: Login with different users
-#    Given the user logged in as a "sales manager"
-#
-#  Scenario: Login with different users
-#    Given the user logged in as a "store manager"
+
   @wip
   Scenario Outline: Login with different users
     Given the user logged in as a "<usertypes>"
-
+    When the user navigates "<tab>" "<module>"
+    Then the title should contains "<title>"
     Examples:
-      | usertypes     |
-      | admin         |
-      | driver        |
-      | sales manager |
-      | boss          |
-      | store manager |
+      | usertypes     | tab        | module          | title                        |
+      | driver        | Activities | Calendar Events | Calendar Events - Activities |
+      | sales manager | Customers  | Accounts        | Accounts - Customers         |
+      | store manager | Marketing  | Campaigns       | All - Campaigns - Marketing  |
 
-    #BREAK UNTIL 1:22
+
 
 
 
