@@ -15,8 +15,8 @@ Feature: Account types
     When the user navigates "Marketing" "Campaigns"
     Then the title should contains "All - Campaigns - Marketing"
 
-
-  Scenario Outline: Login with different users
+ @wip
+  Scenario Outline: Login with different users <usertypes>
     Given the user logged in as a "<usertypes>"
     When the user navigates "<tab>" "<module>"
     Then the title should contains "<title>"
