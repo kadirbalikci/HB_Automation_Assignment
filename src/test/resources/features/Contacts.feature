@@ -17,7 +17,6 @@ Feature: Contacts Page
     Then the user should see following menu options
       | Fleet | Customers | Activities | System |
 
-  @wip
   Scenario: login as a given user
     Given the user is on the login page
     When the use logs in using following credentials

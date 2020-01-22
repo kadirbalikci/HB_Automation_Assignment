@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         "html:target/default-html-reports"},
         features = "src/test/resources/features/",
         glue = "com/vytrack/step_definitions/",
-        dryRun = true,
-        tags = "@login"
+        dryRun = false,
+        tags = "@wip"
 )
 public class CukesRunner {
 }
