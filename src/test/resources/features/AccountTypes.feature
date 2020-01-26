@@ -13,7 +13,7 @@ Feature: Account types
   Scenario: Store manager user
     Given  the user logged in as a "store manager"
     When the user navigates "Marketing" "Campaigns"
-    Then the title should contains "Campaigns - MarketingS"
+    Then the title should contains "Campaigns - Marketing"
 
 
   Scenario Outline: Login with different users <usertypes>

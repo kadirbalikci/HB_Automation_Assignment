@@ -18,7 +18,7 @@ public class Driver {
     }
 
     private static WebDriver driver;
-
+        //testing final branch
     public static WebDriver get() {
         if (driver == null) {
             // this line will tell which browser should open based on the value from properties file
