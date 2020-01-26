@@ -16,7 +16,7 @@ public class Driver {
     // InheritableThreadLocal  --> this is like a container, bag, pool.
     // in this pool we can have separate objects for each thread
     // for each thread, in InheritableThreadLocal we can have separate object for that thread
-    // driver class will provide separate webdriver object per thread
+    // driver class will provide separate web driver object per thread
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
     public static WebDriver get() {
         //if this thread doesn't have driver - create it and add to pool
