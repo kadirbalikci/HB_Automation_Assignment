@@ -14,6 +14,7 @@ public class DBUtils {
      *
      */
     public static void createConnection() {
+
         String url = ConfigurationReader.get("qa3_db_url");
         String username = ConfigurationReader.get("qa3_db_username");
         String password = ConfigurationReader.get("qa3_db_password");

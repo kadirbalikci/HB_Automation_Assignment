@@ -71,7 +71,7 @@ Feature: Contacts Page
       | salesmanager101 | Peyton             | Harber   |
       | storemanager85  | Marcella bnmbnmbmn | Huels    |
 
-    @wip
+    @wip @db
     Scenario: Contacts test with email
       Given the user logged in as a "store manager"
       And the user navigates "Customers" "Contacts"
