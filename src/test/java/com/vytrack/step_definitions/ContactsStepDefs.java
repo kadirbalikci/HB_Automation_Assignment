@@ -89,6 +89,43 @@ public class ContactsStepDefs {
         assertEquals(expectedEmail,actualEmail);
         assertEquals(expectedPhone,actualPhone);
 
+       }
+
+
+    @Then("the information {string} should be the same with database")
+    public void the_information_should_be_the_same_with_database(String email) {
+        //getting information from UI-GUI-Front-End-Browser
+        ContactInfoPage contactInfoPage = new ContactInfoPage();
+        String actualFullname = contactInfoPage.contactFullName.getText();
+        String actualEmail = contactInfoPage.email.getText();
+        String actualPhone = contactInfoPage.phone.getText();
+
+        System.out.println("actualFullname = " + actualFullname);
+        System.out.println("actualEmail = " + actualEmail);
+        System.out.println("actualPhone = " + actualPhone);
+
+        //getting information from database
+        String query = "select concat(name_prefix,' ',first_name,' ',last_name) as fullname, e.email, phone\n" +
+                "from orocrm_contact crm JOIN orocrm_contact_email e\n" +
+                "on crm.id = e.owner_id\n" +
+                "join orocrm_contact_phone p\n" +
+                "on e.owner_id = p.owner_id\n" +
+                "where e.email = '"+email+"';";
+        System.out.println("query = " + query);
+        Map<String, Object> rowMap = DBUtils.getRowMap(query);
+
+        String expectedFullname = (String) rowMap.get("fullname");
+        String expectedEmail = (String) rowMap.get("email");
+        String expectedPhone = (String) rowMap.get("phone");
+
+        System.out.println("expectedFullname = " + expectedFullname);
+        System.out.println("expectedEmail = " + expectedEmail);
+        System.out.println("expectedPhone = " + expectedPhone);
+
+        //compare UI to Database
+        assertEquals(expectedFullname,actualFullname);
+        assertEquals(expectedEmail,actualEmail);
+        assertEquals(expectedPhone,actualPhone);
     }
 
 

@@ -1,10 +1,12 @@
 Feature: Contacts Page
+
   @smoke
   Scenario: Default page number
     Given the user is on the login page
     And the user enter the sales manager information
     When the user navigates "Customers" "Contacts"
     Then default page number should be 1
+
   @smoke
   Scenario: verify Calendar events
     Given the user is on the login page
@@ -36,6 +38,7 @@ Feature: Contacts Page
       | lastname  | Harber          |
     Then the user should be able to login
 
+  @db
   Scenario: login as a sales manager user
     Given  the user is on the login page
     When the use logs in using following credentials
@@ -71,13 +74,19 @@ Feature: Contacts Page
       | salesmanager101 | Peyton             | Harber   |
       | storemanager85  | Marcella bnmbnmbmn | Huels    |
 
-    @wip @db
-    Scenario: Contacts test with email
-      Given the user logged in as a "store manager"
-      And the user navigates "Customers" "Contacts"
-      When the user click the "mbrackstone9@example.com" from contacts
-      Then the information should be the same with database
+  @db
+  Scenario: Contacts test with email
+    Given the user logged in as a "store manager"
+    And the user navigates "Customers" "Contacts"
+    When the user click the "mbrackstone9@example.com" from contacts
+    Then the information should be the same with database
 
+  @wip @db
+  Scenario: Contacts test with email
+    Given the user logged in as a "store manager"
+    And the user navigates "Customers" "Contacts"
+    When the user click the "odugmore5@sakura.ne.jp" from contacts
+    Then the information "odugmore5@sakura.ne.jp" should be the same with database
 
 
 
