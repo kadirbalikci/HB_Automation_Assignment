@@ -30,7 +30,7 @@ public class ContactsStepDefs {
 
     @When("the use logs in using following credentials")
     public void the_use_logs_in_using_following_credentials(Map<String,String> userData) {
-       new LoginPage().login(userData.get("username"),userData.get("password"));
+        new LoginPage().login(userData.get("username"),userData.get("password"));
         //verify fullname on the top right corner from website with firstname,lastname from map
 
         DashboardPage dashboardPage = new DashboardPage();
