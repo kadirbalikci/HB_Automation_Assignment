@@ -1,9 +1,6 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.BasePage;
-import com.vytrack.pages.ContactsPage;
-import com.vytrack.pages.DashboardPage;
-import com.vytrack.pages.LoginPage;
+import com.vytrack.pages.*;
 import com.vytrack.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -55,8 +52,17 @@ public class ContactsStepDefs {
 
     @Then("the information should be the same with database")
     public void the_information_should_be_the_same_with_database() {
+        //getting information from UI-GUI-Front-End-Browser
+        ContactInfoPage contactInfoPage = new ContactInfoPage();
+        String actualFullname = contactInfoPage.contactFullName.getText();
+        String actualEmail = contactInfoPage.email.getText();
+        String actualPhone = contactInfoPage.phone.getText();
 
-        BrowserUtils.waitFor(3);
+        System.out.println("actualFullname = " + actualFullname);
+        System.out.println("actualEmail = " + actualEmail);
+        System.out.println("actualPhone = " + actualPhone);
+
+
     }
 
 
