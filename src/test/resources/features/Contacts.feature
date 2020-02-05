@@ -81,13 +81,26 @@ Feature: Contacts Page
     When the user click the "mbrackstone9@example.com" from contacts
     Then the information should be the same with database
 
-  @wip @db
+  @db
   Scenario: Contacts test with email
     Given the user logged in as a "store manager"
     And the user navigates "Customers" "Contacts"
     When the user click the "odugmore5@sakura.ne.jp" from contacts
-    Then the information "odugmore5@sakura.ne.jp" should be the same with database
+    Then the information "odugmore5@s akura.ne.jp" should be the same with database
 
+  @wip @db
+  Scenario Outline: Contacts test with email DDT
+    Given the user logged in as a "store manager"
+    And the user navigates "Customers" "Contacts"
+    When the user click the "<email>" from contacts
+    Then the information "<email>" should be the same with database
+
+    Examples:
+      | email                    |
+      | mbrackstone9@example.com |
+      | odugmore5@sakura.ne.jp   |
+      | safwansaba@hotmail.com   |
+      | poohchi@bark.edu         |
 
 
 
