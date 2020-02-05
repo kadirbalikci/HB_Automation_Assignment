@@ -62,6 +62,9 @@ public class ContactsStepDefs {
         System.out.println("actualEmail = " + actualEmail);
         System.out.println("actualPhone = " + actualPhone);
 
+        //get information from database
+
+
 
     }
 
