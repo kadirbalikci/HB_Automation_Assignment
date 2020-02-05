@@ -70,3 +70,23 @@ Feature: Contacts Page
       | user1           | John               | Doe      |
       | salesmanager101 | Peyton             | Harber   |
       | storemanager85  | Marcella bnmbnmbmn | Huels    |
+
+    @wip
+    Scenario: Contacts test with email
+      Given the user logged in as a "store manager"
+      And the user navigates "Customers" "Contacts"
+      When the user click the "mbrackstone9@example.com" from contacts
+      Then the information should be the same with database
+
+
+
+
+
+
+
+
+
+
+
+
+
