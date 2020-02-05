@@ -7,6 +7,8 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
 
     @Before("@db")
@@ -16,7 +18,8 @@ public class Hooks {
 
     @Before
     public void setUp(){
-        System.out.println("\tthis is coming from BEFORE");
+        Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Driver.get().manage().window().fullscreen();
     }
 
     @After("@db")

@@ -1,6 +1,7 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.BasePage;
+import com.vytrack.pages.ContactsPage;
 import com.vytrack.pages.DashboardPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
@@ -41,6 +42,23 @@ public class ContactsStepDefs {
         Assert.assertEquals(expectedFullname,actualFullname);
 
     }
+
+    @When("the user click the {string} from contacts")
+    public void the_user_click_the_from_contacts(String email) {
+
+        BrowserUtils.waitFor(2);
+        //click the row with the email
+        ContactsPage contactsPage = new ContactsPage();
+        contactsPage.getContactEmail(email).click();
+
+    }
+
+    @Then("the information should be the same with database")
+    public void the_information_should_be_the_same_with_database() {
+
+        BrowserUtils.waitFor(3);
+    }
+
 
 
 }
