@@ -111,8 +111,7 @@ public class ContactsStepDefs {
                 "join orocrm_contact_phone p\n" +
                 "on e.owner_id = p.owner_id\n" +
                 "where e.email = '"+email+"';";
-        System.out.println("query = " + query);
-        Map<String, Object> rowMap = DBUtils.getRowMap(query);
+         Map<String, Object> rowMap = DBUtils.getRowMap(query);
 
         String expectedFullname = (String) rowMap.get("fullname");
         String expectedEmail = (String) rowMap.get("email");
@@ -126,6 +125,7 @@ public class ContactsStepDefs {
         assertEquals(expectedFullname,actualFullname);
         assertEquals(expectedEmail,actualEmail);
         assertEquals(expectedPhone,actualPhone);
+
     }
 
 
