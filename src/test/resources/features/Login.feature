@@ -1,4 +1,4 @@
-@login @smoke
+@regression @smoke
 Feature: Users should be able to login
 
   Background:
@@ -13,15 +13,17 @@ Feature: Users should be able to login
   Scenario: Login as a sales manager
     When the user enter the sales manager information
     Then the user should be able to login
-  @store_manager @db
 
+  @store_manager @db
   Scenario: Login as a store manager
     When the user enter the store manager information
     Then the user should be able to login
 
-    #BREAK UNTIL 4:05
 
-
+  Scenario: Driver user
+    Given the user logged in as a "driver"
+    When the user navigates "Activities" "Calendar Events"
+    Then the title should contains "Calendar Events - Activities"
 
 
 

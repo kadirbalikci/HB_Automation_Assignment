@@ -94,7 +94,6 @@ public class LoginStepDefs {
              password = ConfigurationReader.get("store_manager_password");
         }
 
-
         LoginPage loginPage = new LoginPage();
         loginPage.login(username,password);
     }

@@ -1,5 +1,6 @@
 Feature: Account types
 
+  @wip
   Scenario: Driver user
     Given the user logged in as a "driver"
     When the user navigates "Activities" "Calendar Events"

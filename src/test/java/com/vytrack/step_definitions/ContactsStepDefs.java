@@ -34,24 +34,18 @@ public class ContactsStepDefs {
     public void the_use_logs_in_using_following_credentials(Map<String,String> userData) {
         new LoginPage().login(userData.get("username"),userData.get("password"));
         //verify fullname on the top right corner from website with firstname,lastname from map
-
         DashboardPage dashboardPage = new DashboardPage();
         dashboardPage.waitUntilLoaderScreenDisappear();
         String actualFullname = dashboardPage.getUserName();
         String expectedFullname= userData.get("firstname")+" "+userData.get("lastname");
-
         assertEquals(expectedFullname,actualFullname);
-
     }
-
     @When("the user click the {string} from contacts")
     public void the_user_click_the_from_contacts(String email) {
-
         BrowserUtils.waitFor(2);
         //click the row with the email
         ContactsPage contactsPage = new ContactsPage();
         contactsPage.getContactEmail(email).click();
-
     }
 
     @Then("the information should be the same with database")

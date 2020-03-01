@@ -48,16 +48,6 @@ Feature: Contacts Page
       | lastname  | Harber         |
     Then the user should be able to login
 
-
-
-
-
-
-
-
-
-
-
 ##########################
   Scenario Outline: login as a given user DDF
     Given the user is on the login page
@@ -88,7 +78,7 @@ Feature: Contacts Page
     When the user click the "odugmore5@sakura.ne.jp" from contacts
     Then the information "odugmore5@s akura.ne.jp" should be the same with database
 
-  @wip @db
+ @db
   Scenario Outline: Contacts test with email DDT
     Given the user logged in as a "store manager"
     And the user navigates "Customers" "Contacts"

@@ -21,7 +21,7 @@ public class Hooks {
     @Before
     public void setUp(){
         Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Driver.get().manage().window().fullscreen();
+       // Driver.get().manage().window().fullscreen();
     }
 
     @After("@db")

@@ -12,7 +12,7 @@ Feature: Navigation Menu
     And the user enter the sales manager information
     When  the user navigates Marketing Campaigns
     Then the url should be expected Campaigns url
-
+@wip
   Scenario: Activities—> Calendar Events
     Given the user is on the login page
     And the user enter the sales manager information
