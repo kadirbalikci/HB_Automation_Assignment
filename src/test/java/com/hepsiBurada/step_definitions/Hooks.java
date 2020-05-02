@@ -1,7 +1,6 @@
-package com.vytrack.step_definitions;
+package com.hepsiBurada.step_definitions;
 
-import com.vytrack.utilities.DBUtils;
-import com.vytrack.utilities.Driver;
+import com.hepsiBurada.utilities.Driver;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -12,23 +11,14 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    @Before("@db")
-    public void setUpDatabase(){
-        System.out.println("Creating database connection...");
-        DBUtils.createConnection();
-    }
 
     @Before
     public void setUp(){
-        Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-       // Driver.get().manage().window().fullscreen();
+        Driver.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        Driver.get().manage().window().maximize();
     }
 
-    @After("@db")
-    public void tearDownDatabase(){
-        System.out.println("Closing database connection...");
-        DBUtils.destroyConnection();
-    }
+
 
     @After
     public void tearDown(Scenario scenario){
@@ -37,11 +27,6 @@ public class Hooks {
             final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot,"image/png");
         }
-
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
-
-
-
-
 }

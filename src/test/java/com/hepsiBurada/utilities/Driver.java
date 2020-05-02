@@ -1,4 +1,4 @@
-package com.vytrack.utilities;
+package com.hepsiBurada.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -14,9 +14,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.print.DocFlavor;
-import java.rmi.Remote;
 
 public class Driver {
     private Driver() {
@@ -35,7 +32,11 @@ public class Driver {
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver());
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--user-agent=Mozilla/5.0 (WghrXkuMnF) AppleWebKit/5.0 Chrome/8.0 Safari/5.0");
+
+                    driverPool.set(new ChromeDriver(options));
+
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
