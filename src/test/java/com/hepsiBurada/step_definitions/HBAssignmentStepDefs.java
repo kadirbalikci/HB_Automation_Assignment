@@ -72,14 +72,19 @@ public class HBAssignmentStepDefs {
         executor.executeScript("arguments[0].click();", dashboardPage.SepetimButton);
 
         List<String> actualTitleList = new ArrayList<>();
-        actualTitleList.add(sepetimPage.item1.getText());
-        actualTitleList.add(sepetimPage.item2.getText());
-        actualTitleList.add(sepetimPage.item3.getText());
+
+        actualTitleList.add(sepetimPage.item1.getAttribute("title"));
+        actualTitleList.add(sepetimPage.item2.getAttribute("title"));
+        actualTitleList.add(sepetimPage.item3.getAttribute("title"));
+
+        System.out.println(sepetimPage.item3.getAttribute("title"));
+        System.out.println(sepetimPage.item2.getAttribute("title"));
+        System.out.println(sepetimPage.item1.getAttribute("title"));
 
         System.out.println(actualTitleList);
 
         for (int i = 0; i <actualTitleList.size() ; i++) {
-            String expectedTitle = expectedTitleList.get(i).substring(0,25)+"...";
+            String expectedTitle = expectedTitleList.get(i);
             assertEquals(expectedTitle, actualTitleList.get(i));
         }
     }
