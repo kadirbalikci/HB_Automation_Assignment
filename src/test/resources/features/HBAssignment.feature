@@ -1,12 +1,11 @@
 Feature: HB Assignment
 
   @wip
-  Scenario: Default page number
+  Scenario: HB Assignment
     Given the user is on the HB login page
     And the user enter the valid credentials
     When user make a search through three different items
     Then In the Sepetim page searched items should be displayed in Son Gezdikleriniz menu
-
 
 
 #      | items         | titles                                          |

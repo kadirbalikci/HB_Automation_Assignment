@@ -18,16 +18,12 @@ public class DashboardPage {
     @FindBy(xpath="//*[text()='ARA']")
     public WebElement searchButton;
 
-    //@FindBy(className = "product-title title")
-    //@FindBy(xpath = "//*[@class='product-detail']")
     @FindBy(xpath = "//*[@class='hb-pl-cn']")
     public WebElement itemDetailsButton;
 
-    //@FindBy(xpath = "//*[text()='Sepetim']")
     @FindBy(xpath = "//*[@class='OldMyAccount-2OvEz OldMyAccount-3TYPj']")
     public WebElement SepetimButton;
 
-   // @FindBy(className = "Icon-close SearchBoxOld-closeIcon")
     @FindBy(className = "SearchBoxOld-iconWrapper")
     public WebElement clearButton;
 }
