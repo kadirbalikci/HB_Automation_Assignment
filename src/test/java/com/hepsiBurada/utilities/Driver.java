@@ -44,7 +44,9 @@ public class Driver {
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    driverPool.set(new FirefoxDriver());
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--user-agent=Mozilla/5.0 (WghrXkuMnF) AppleWebKit/5.0 Chrome/8.0 Safari/5.0");
+                    driverPool.set(new FirefoxDriver(firefoxOptions));
                     break;
                 case "firefox-headless":
                     WebDriverManager.firefoxdriver().setup();
