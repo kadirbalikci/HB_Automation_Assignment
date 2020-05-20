@@ -78,7 +78,6 @@ public class Driver {
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
-
             }
         }
         return driverPool.get();

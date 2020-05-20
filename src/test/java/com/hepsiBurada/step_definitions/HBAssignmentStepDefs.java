@@ -53,7 +53,9 @@ public class HBAssignmentStepDefs {
         for (int i = 0; i <itemCodeList.size() ; i++) {
             wait.until(ExpectedConditions.visibilityOf(dashboardPage.searchBox));
             dashboardPage.searchBox.sendKeys(itemCodeList.get(i));
-            Thread.sleep(3000);
+//            Thread.sleep(3000);
+            wait.until(ExpectedConditions.visibilityOf(dashboardPage.searchButton));
+//            wait.until(ExpectedConditions.elementToBeClickable(dashboardPage.searchButton));
             dashboardPage.searchButton.click();
           Thread.sleep(3000);
              dashboardPage.itemDetailsButton.click();
@@ -61,7 +63,6 @@ public class HBAssignmentStepDefs {
              dashboardPage.clearButton.click();
         }
     }
-
     @Then("In the Sepetim page searched items should be displayed in Son Gezdikleriniz menu")
     public void in_the_Sepetim_page_searched_items_should_be_displayed_in_Son_Gezdikleriniz_menu() {
         List<String> expectedTitleList = Arrays.asList(  "Sinbo Shb 3117 1000 W Blender Seti",
