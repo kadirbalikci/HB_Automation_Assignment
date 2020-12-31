@@ -21,7 +21,7 @@ public class DashboardPage {
     @FindBy(xpath = "//*[@class='hb-pl-cn']")
     public WebElement itemDetailsButton;
 
-    @FindBy(xpath = "//*[@class='OldMyAccount-2OvEz OldMyAccount-3TYPj']")
+    @FindBy(id = "shoppingCart")
     public WebElement SepetimButton;
 
     @FindBy(className = "SearchBoxOld-iconWrapper")

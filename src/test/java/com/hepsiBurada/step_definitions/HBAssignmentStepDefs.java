@@ -37,6 +37,7 @@ public class HBAssignmentStepDefs {
     public void the_user_enter_the_valid_credentials() throws InterruptedException {
 
         LoginPage loginPage = new LoginPage();
+        loginPage.cookiesClose.click();
         String username = ConfigurationReader.get("HB_username");
         String password = ConfigurationReader.get("HB_password");
         loginPage.login(username,password);
@@ -74,13 +75,9 @@ public class HBAssignmentStepDefs {
 
         List<String> actualTitleList = new ArrayList<>();
 
-        actualTitleList.add(sepetimPage.item1.getAttribute("title"));
-        actualTitleList.add(sepetimPage.item2.getAttribute("title"));
-        actualTitleList.add(sepetimPage.item3.getAttribute("title"));
-
-        System.out.println(sepetimPage.item3.getAttribute("title"));
-        System.out.println(sepetimPage.item2.getAttribute("title"));
-        System.out.println(sepetimPage.item1.getAttribute("title"));
+        actualTitleList.add(sepetimPage.item3.getText());
+        actualTitleList.add(sepetimPage.item2.getText());
+        actualTitleList.add(sepetimPage.item1.getText());
 
         System.out.println(actualTitleList);
 

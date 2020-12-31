@@ -1,6 +1,7 @@
 package com.hepsiBurada.pages;
 
 import com.hepsiBurada.utilities.Driver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -18,14 +19,17 @@ public class LoginPage {
     @FindBy(id="login")
     public WebElement LoginButton;
 
-    @FindBy(id="email")
+    @FindBy(id="txtUserName")
     public WebElement userName;
 
-    @FindBy(id="password")
+    @FindBy(id="txtPassword")
     public WebElement password;
 
-    @FindBy(xpath = "//*[text()='Giriş']")
+    @FindBy(id = "btnLogin")
     public WebElement submit;
+
+    @FindBy(css = "div.cookie-info > img")
+    public WebElement cookiesClose;
 
 
     public void login(String userNameStr, String passwordStr) throws InterruptedException {
@@ -33,7 +37,11 @@ public class LoginPage {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(AccountMenu).perform();
 
-        LoginButton.click();
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.get();
+
+        jse.executeScript("arguments[0].click();", LoginButton);
+
+//        LoginButton.click();
         Thread.sleep(3000);
         userName.sendKeys(userNameStr);
          password.sendKeys(passwordStr);
